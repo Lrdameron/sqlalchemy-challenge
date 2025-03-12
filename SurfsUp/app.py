@@ -17,7 +17,7 @@ engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # Reflect the database tables
 Base = automap_base()
-Base.prepare(engine, reflect=True)
+Base.prepare(engine, autoload_with=engine)
 
 # Save references to tables
 Measurement = Base.classes.measurement
